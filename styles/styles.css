@@ -1,0 +1,1040 @@
+@charset "utf-8";
+
+/* Box Sizing Reset */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* heading font */
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 1em;
+}
+ul li {
+  font-family: 'Merriweather', serif;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: #003366;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'logo button'
+    'nav  nav';
+  align-items: center;
+  background-color: #003366;
+  padding: 1.25rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #d3d3d3;
+}
+
+header h1 {
+  grid-area: logo;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.nav-bar nav {
+  grid-area: nav;
+  text-align: right;
+  display: none;
+}
+
+.show .nav-bar nav {
+  display: block;
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar ul li {
+  margin-top: 20px;
+}
+
+.nav-bar ul li:last-child {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 70px;
+  justify-self: center;
+}
+
+.nav-bar nav a {
+  padding-left: 10px;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+.menu-btn {
+  grid-area: button;
+  justify-self: end;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+main.index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003366;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+  flex-grow: 1;
+}
+.index-container article {
+  max-width: 800px;
+}
+.index-container h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.index-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.button-link {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.button-link:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-bar nav a:hover,
+.nav-bar nav a:active,
+.nav-bar nav a:focus {
+  background-color: rgb(136, 136, 136);
+}
+.eventLink {
+  width: 80px;
+  background-color: orangered;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.eventLink:hover {
+  background-color: #ff4500;
+}
+
+footer {
+  background-color: #003366;
+  color: #d3d3d3;
+  text-align: center;
+}
+
+@media (min-width: 37.5em) /*600px / 16px = 37.5em*/ /* @media (max-width: 1920px) and (min-width: 320px) */ {
+  .nav-bar {
+    grid-template-columns: 1fr 450px;
+    grid-template-areas: 'logo nav';
+  }
+
+  .nav-bar .menu-btn {
+    display: none;
+  }
+  .nav-bar nav {
+    display: block;
+  }
+  .nav-bar ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-bar ul li {
+    flex: 1;
+    margin-top: 0px;
+  }
+
+  .nav-bar ul li:last-child {
+    margin-bottom: 0px;
+  }
+
+  .nav-bar nav a {
+    padding: 0;
+    text-align: center;
+  }
+}
+
+/*
+  ========================================================================================
+  EVENTPAGE styles start
+  ========================================================================================
+*/
+
+:root {
+  --all-black: #000000;
+  --primary-black: #222222;
+  --primary-neon-green: #c7fe46;
+  --primary-neon-blue: #3edfd4;
+  --primary-medium-blue: #2723ff;
+  --primary-white: #ffffff;
+  --title-stroke-width: 0.2rem;
+  --title-stroke-width-neg: -0.2rem;
+  --banner-desktop-height: 800px;
+  --nav-desktop-height: 60px;
+}
+
+.event-container h1 span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: calc(3rem + 5vw);
+  line-height: calc(3rem + 3vw);
+  color: var(--primary-neon-green);
+  padding-left: 0.8rem;
+  z-index: 10;
+}
+
+.title-black-box {
+  padding-top: 2vw;
+  background-color: var(--primary-black);
+}
+
+.event-container h1 .title-whistler {
+  padding-left: 1.4rem;
+  font-family: 'Climate Crisis', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'YEAR' 2000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-black);
+  font-size: calc(2rem + 5vw);
+  line-height: calc(1rem + 3vw);
+}
+
+.event-container .title-festival {
+  padding-left: 1.2rem;
+  font-family: 'Climate Crisis', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'YEAR' 2000;
+  text-transform: uppercase;
+  color: var(--primary-black);
+  text-shadow: var(--title-stroke-width-neg) var(--title-stroke-width-neg) 0
+      var(--primary-neon-green),
+    var(--title-stroke-width) var(--title-stroke-width-neg) 0
+      var(--primary-neon-green),
+    var(--title-stroke-width-neg) var(--title-stroke-width) 0
+      var(--primary-neon-green),
+    var(--title-stroke-width) var(--title-stroke-width) 0
+      var(--primary-neon-green);
+  font-size: calc(1rem + 1vw);
+  line-height: calc(3rem + 2vw);
+  letter-spacing: 0.3rem;
+}
+
+.event-container h1 span {
+  display: block;
+}
+
+.highlight-outline {
+  font-family: 'Climate Crisis', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'YEAR' 2000;
+  text-transform: uppercase;
+  text-shadow: var(--title-stroke-width-neg) var(--title-stroke-width-neg) 0
+      var(--primary-black),
+    var(--title-stroke-width) var(--title-stroke-width-neg) 0
+      var(--primary-black),
+    var(--title-stroke-width-neg) var(--title-stroke-width) 0
+      var(--primary-black),
+    var(--title-stroke-width) var(--title-stroke-width) 0 var(--primary-black);
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+/****************** EVENTPAGE NAV ******************/
+
+.event-header .nav-bar {
+  background-color: var(--primary-black);
+  position: fixed;
+  width: 100%;
+  padding: 0rem 1.25rem;
+}
+
+.event-header .nav-bar ul li:last-child {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.event-header .logo {
+  height: 60px;
+  width: 60px;
+  margin: 0.8rem 0;
+}
+
+.event-header h1 {
+  grid-area: logo;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.event-header p,
+.event-header a {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.event-container h1,
+.event-container h2,
+.event-container h3,
+.event-container h4,
+.event-container h5,
+.event-container p {
+  margin: 0;
+  padding: 0;
+}
+
+/****************** EVENTPAGE header ******************/
+
+.event-header {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  padding: 0;
+}
+
+.event-header header p {
+  grid-area: logo;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+/****************** EVENTPAGE sections ******************/
+
+.event-section-info {
+  background-color: var(--primary-neon-blue);
+  border-bottom: 15px solid var(--all-black);
+}
+
+.event-section-about {
+  background-color: var(--primary-neon-green);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: span 3;
+  justify-self: stretch;
+}
+
+.event-section-activities {
+  background-color: var(--primary-black);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.event-section-team {
+  background-color: var(--primary-medium-blue);
+  color: var(--primary-white);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  column-gap: 1rem;
+}
+
+.event-container .event-section-about h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.event-container .event-section-activities h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary-neon-green);
+}
+
+.event-section-activities article img {
+  width: 100%;
+}
+
+.event-content > img {
+  width: 100%;
+}
+.event-container .event-section-team h2 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.event-container .event-section-team h3 {
+  margin-top: 0.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+}
+
+.event-section-info,
+.event-section-about,
+.event-section-activities,
+.event-section-team {
+  padding: 2rem 2rem;
+}
+
+.event-section-info span,
+.event-section-about span {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.event-section-info h2,
+.event-section-about h2,
+.event-section-activities h2,
+.event-section-team h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--primary-black);
+  grid-row: 1;
+}
+
+.event-section-info h2,
+.event-section-info p {
+  grid-column: span 3;
+}
+
+.event-section-activities h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--primary-white);
+  margin: 0.5rem 0;
+}
+
+.anchor {
+  height: 1px;
+}
+
+.event-section-info > * {
+  display: block;
+}
+
+.tag {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--primary-neon-green);
+  border: 1px solid var(--primary-neon-green);
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+
+.event-section-info .highlight-outline {
+  color: var(--primary-neon-blue);
+}
+
+.event-section-about .highlight-outline {
+  color: var(--primary-neon-green);
+}
+
+.event-section-info p {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.event-section-team p {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+img,
+section {
+  margin: 0;
+  border: none;
+}
+
+button {
+  padding: 0.5rem 2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.event-container .custom-button {
+  display: block;
+  padding: 0.5rem 2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-decoration: none;
+  color: var(--primary-white);
+}
+
+.event-section-about .custom-button {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  justify-self: center;
+}
+
+.event-section-activities .custom-button {
+  background-color: var(--primary-neon-green);
+  color: var(--primary-black);
+}
+
+.event-section-team .custom-button {
+  background-color: var(--primary-neon-blue);
+  justify-self: center;
+  color: var(--primary-black);
+}
+
+.event-section-activities > div:first-of-type {
+  grid-column: span 1;
+  justify-items: center;
+  align-content: center;
+}
+
+.event-section-team > div:first-of-type {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: 1fr;
+}
+
+.event-section-activities > div:nth-of-type(2) {
+  display: grid;
+  grid-column: 1;
+  grid-template-columns: subgrid;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.event-section-activities article > div {
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--primary-white);
+}
+
+.event-section-team div:nth-of-type(2) {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: subgrid;
+}
+
+.event-section-team div:first-of-type h2 {
+  grid-column: span 3;
+}
+
+.event-section-team div:nth-of-type(2) article {
+  grid-column: span 1;
+  text-align: center;
+}
+
+/****************** EVENTPAGE ******************/
+
+.event-container .banner {
+  position: absolute;
+  height: var(--banner-desktop-height);
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  overflow: hidden;
+}
+
+.event-container .banner h1 {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  margin: 0;
+}
+
+.event-container .banner-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-image: url('../images/index/skiiers1.jpg');
+  background-size: cover;
+  z-index: 1;
+}
+
+.event-content {
+  z-index: 0;
+  margin-top: var(--banner-desktop-height);
+  background-color: var(--primary-black);
+}
+
+.event-header,
+.event-container,
+.event-footer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-container {
+  text-align: left;
+  padding: 0px;
+  z-index: 5;
+  h1,
+  h2,
+  /* h3, */
+  h4,
+  h5,
+  p {
+    text-align: left;
+  }
+}
+
+.event-content > img:nth-of-type(2) {
+  display: none;
+}
+
+/****************** EVENTPAGE footer ******************/
+
+.event-footer {
+  padding: 0rem 2rem 2rem 2rem;
+  background-color: var(--primary-black);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+.event-footer div:last-child {
+  grid-column: span 2;
+  width: 100%;
+  margin-top: 0.5rem;
+  & > p {
+    text-align: left;
+    margin: 0.1rem 0rem;
+    opacity: 0.5;
+  }
+}
+
+.event-footer .logo {
+  width: 54px;
+  height: 54px;
+}
+
+.event-footer div {
+  justify-items: start;
+}
+
+.event-footer div > div {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.event-footer h5 {
+  display: inline;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--primary-neon-green);
+  margin: 0;
+  align-self: center;
+}
+
+.event-footer h5 span {
+  display: block;
+  text-align: left;
+}
+
+.event-footer div:nth-of-type(3) a,
+.event-footer p {
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--primary-white);
+  align-self: end;
+}
+
+.event-footer div:nth-of-type(2) ul {
+  margin: 0;
+}
+
+.event-footer div:nth-of-type(2) a {
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--primary-white);
+}
+
+.event-footer ul {
+  padding-left: 0;
+}
+
+.event-footer ul li {
+  list-style-type: none;
+  text-align: left;
+  padding-bottom: 0.5rem;
+}
+
+.event-footer div:nth-of-type(3) {
+  text-align: left;
+  grid-column: span 2;
+  gap: 1.5rem;
+  padding: 2rem 0rem;
+  border-bottom: 1px solid grey;
+  opacity: 0.5;
+}
+
+.event-footer div:nth-of-type(3) a {
+  margin-right: 2rem;
+}
+
+.socials {
+  grid-column: 1;
+  display: flex;
+  justify-self: start;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.socials img {
+  width: 24px;
+  align-items: end;
+  align-content: end;
+  align-self: flex-end;
+}
+
+.event-footer ul {
+  margin: 0;
+}
+
+/****************** EVENTPAGE Decorative ******************/
+
+.decorative-s-line {
+  display: grid;
+  margin-top: -16vw;
+  grid-column: span 7;
+  overflow: hidden;
+  place-items: center;
+}
+
+.decorative-s-line > img {
+  width: 200%;
+}
+
+img.decorative-s-green,
+img.decorative-s-blue {
+  all: unset;
+  position: absolute;
+  z-index: 5;
+}
+img.decorative-s-green {
+  width: 70%;
+  left: 0;
+  margin-top: -4%;
+  margin-left: -20%;
+}
+img.decorative-s-blue {
+  width: 30vw;
+  margin-right: calc(-30vw / 1.5);
+  right: 0;
+}
+
+/* No need to show extra decoration elements on mobile */
+.info-bg-text {
+  display: none;
+}
+
+/* 
+  ========================================================================================
+  Desktop styles
+  ========================================================================================
+*/
+
+/* using the same breakpoint as above */
+@media (min-width: 37.5em) {
+  #anchor-about {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .event-header .nav-bar ul li:last-child {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0rem;
+  }
+  .event-content {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .event-section-info {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-column: 4/8;
+    grid-row: 1/3;
+    width: 100%;
+    border-left: 15px solid var(--all-black);
+    border-bottom: 0;
+    z-index: 1;
+  }
+
+  .info-bg-text {
+    all: inherit;
+    display: block;
+    grid-column: span 7;
+    justify-self: center;
+
+    /* one line */
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* style */
+    color: var(--primary-black);
+    font-family: 'Climate Crisis', serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'YEAR' 2000;
+    font-size: 8rem;
+    text-transform: uppercase;
+    text-shadow: var(--title-stroke-width-neg) var(--title-stroke-width-neg) 0
+        var(--primary-medium-blue),
+      var(--title-stroke-width) var(--title-stroke-width-neg) 0
+        var(--primary-medium-blue),
+      var(--title-stroke-width-neg) var(--title-stroke-width) 0
+        var(--primary-medium-blue),
+      var(--title-stroke-width) var(--title-stroke-width) 0
+        var(--primary-medium-blue);
+  }
+
+  .event-content > p:nth-of-type(1) {
+    grid-column: span 7;
+    grid-row: 3;
+    margin-top: -7rem;
+  }
+
+  .event-content > p:nth-of-type(2) {
+    grid-column: span 7;
+    margin-top: -5rem;
+  }
+
+  .event-content > p:nth-of-type(3) {
+    grid-column: span 7;
+  }
+
+  .event-content > img:first-of-type {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-row: 1/2;
+    grid-column: 1/5;
+    z-index: 0;
+    padding-left: 2rem;
+    border-right: 15px solid var(--all-black);
+    border-bottom: 0;
+  }
+
+  .event-section-about {
+    margin-top: 2rem;
+    grid-column: 1/5;
+    grid-row: 4/5;
+    border-right: 15px solid var(--all-black);
+    border-bottom: 0;
+    z-index: 1;
+    align-self: start;
+  }
+  .event-container .event-section-about h2 {
+    text-align: left;
+  }
+
+  .event-container .event-section-about .custom-button {
+    align-self: start;
+    justify-self: start;
+  }
+
+  .event-content > img:nth-of-type(2) {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 4/8;
+    grid-row: 4/5;
+    z-index: 0;
+    border-left: 15px solid var(--all-black);
+    border-bottom: 0;
+    padding-right: 2rem;
+    width: 100%;
+  }
+
+  .event-section-activities {
+    display: grid;
+    grid-column: span 7;
+    align-self: center;
+  }
+
+  .event-section-activities > div:nth-of-type(1) {
+    grid-column: span 7;
+  }
+
+  .event-section-activities > div:nth-of-type(2) {
+    display: grid;
+    grid-column: span 7;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+  }
+
+  .event-section-activities article {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+  }
+
+  .event-section-activities article > div {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    z-index: 0;
+  }
+
+  .event-section-activities article > img {
+    grid-column: 2;
+    grid-row: 1/4;
+    z-index: 1;
+  }
+
+  .event-section-activities article .tag {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: start;
+  }
+
+  .event-section-team {
+    grid-column: span 7;
+    grid-template-columns: subgrid;
+  }
+
+  .event-section-team > div:first-of-type {
+    grid-column: span 7;
+  }
+
+  .event-section-team > div:nth-of-type(2) {
+    grid-column: span 7;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .event-section-team > div:first-child > h2 {
+    grid-column: 1/2;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .event-section-team > div:first-child > .custom-button {
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .event-content img:nth-of-type(3) {
+    grid-column: span 7;
+  }
+
+  img.decorative-s-green,
+  img.decorative-s-blue {
+    all: unset;
+    position: absolute;
+  }
+  img.decorative-s-green {
+    width: 50%;
+    left: 0;
+    max-width: 500px;
+    margin-top: -5%;
+    margin-left: -10%;
+    z-index: 5;
+  }
+  img.decorative-s-blue {
+    width: 30%;
+    max-width: 400px;
+    right: -15%;
+    z-index: 15;
+  }
+}

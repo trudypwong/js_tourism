@@ -1,0 +1,41 @@
+
+=========================== GURDEEP KAUR ===========================
+// Assistance from AI tool (ChatGPT):
+1. Updated the grid alignment for the "About" page using the following CSS: 
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+2. Asked for suggestions on login form colors.
+3. Took help regarding adding alt text for images.
+4. To create a fading effect for a background image using CSS.
+4. How to scaleup image on hover.
+5. How can I resolve this error in console..
+   Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at script.js:69:3
+
+
+============================== TRUDY ==============================
+
+Related to concepts
+--------------------
+1. What are popular activities at Whistler?
+2. What are popular events that are held in Whistler?
+3. Can a microsite have multiple pages?
+4. What campaigns have been held at Whistler?
+5. What are Whistler activites at the WSS festival?
+6. Create an intro description on a landing page for a ski and snowboard festival at Whistler.
+7. Create a fake list of activities for the WSSF
+
+Related to code
+--------------------
+1. how do I horizontally center an image in a grid and also have It clip to just contain within the vw when the image overflows past the container
+   - place-items: center;
+2. why would a html container not be able to set a CSS style, why is there a warning icon on the devtool console element styles?
+   - debugging top banner style
+3. how to override a user agent stylesheet?
+   - look at the computed tab in DevTools
+4. why would 100vw sometimes extend past the browser width
+   - elements with absolute or fixed position can behave unexpectedly with vw
+   - check box-model
+5. how do you place anchor links to show content below a navigation bar?
+6. using an anchor link how do you get the offset from the top, it is null at the moment
+7. how to query a name attribute in javascript
+
+============================== IRYNA ==============================
