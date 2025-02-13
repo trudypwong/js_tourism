@@ -1128,7 +1128,8 @@ dl {
   grid-row: 1;
 }
 
-.event-container .help-qa p {
+.event-container .help-content .credits,
+.event-container .detail-content .credits {
   font-family: 'Barlow', sans-serif;
   font-weight: 300;
   font-size: 1rem;
@@ -1138,8 +1139,76 @@ dl {
   grid-row: 1;
 }
 
+.event-container .event-content .credits {
+  grid-column: span 8;
+  padding: 2rem 4rem;
+  max-width: var(--max-width);
+  margin: auto;
+  p {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 3rem;
+    color: white;
+    opacity: 0.5;
+
+    text-align: center;
+  }
+}
 .event-footer-qa > div:first-of-type,
 .event-footer-qa > div:nth-of-type(2) {
   border-top: 1px solid rgba(128, 128, 128, 0.5);
   padding: 2rem 0;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: var(--max-width);
+  margin: auto;
+  p,
+  h3 {
+    color: white;
+  }
+}
+
+.event-detail-header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.detail-content {
+  h3,
+  p {
+    font-weight: 400;
+  }
+
+  h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+  }
+
+  p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.4rem;
+  }
+
+  .custom-button {
+    margin-top: 2rem;
+    background-color: var(--primary-neon-green);
+    color: var(--primary-black);
+    width: fit-content;
+  }
+}
+.event-detail-dates p {
+  color: var(--primary-neon-blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3rem;
+  text-transform: uppercase;
 }
