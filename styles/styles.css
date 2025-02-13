@@ -16,6 +16,11 @@ h3 {
 
 h1 {
   font-weight: 700;
+  span:first-child,
+  span > span {
+    max-width: var(--max-width);
+    margin: auto;
+  }
 }
 
 p {
@@ -29,10 +34,10 @@ ul li {
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
   font-size: 16px;
   margin: 0;
-  background-color: #003366;
+  background-color: var(--primary-black);
 }
 
 .wrapper {
@@ -49,8 +54,8 @@ body {
     'logo button'
     'nav  nav';
   align-items: center;
-  background-color: #003366;
   padding: 1.25rem;
+  max-width: var(--max-width);
 }
 
 header a {
@@ -94,7 +99,7 @@ header h1 {
 .nav-bar nav a {
   padding-left: 10px;
   line-height: 1.5;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   display: block;
   text-align: center;
   transition: background-color 0.5s ease;
@@ -159,7 +164,8 @@ main.index-container {
 .nav-bar nav a:hover,
 .nav-bar nav a:active,
 .nav-bar nav a:focus {
-  background-color: rgb(136, 136, 136);
+  /* background-color: rgb(136, 136, 136); */
+  color: var(--primary-neon-green);
 }
 .eventLink {
   width: 80px;
@@ -198,8 +204,10 @@ footer {
   }
 
   .nav-bar ul li {
-    flex: 1;
     margin-top: 0px;
+    a {
+      margin: 0 1rem;
+    }
   }
 
   .nav-bar ul li:last-child {
@@ -229,6 +237,7 @@ footer {
   --title-stroke-width-neg: -0.2rem;
   --banner-desktop-height: 800px;
   --nav-desktop-height: 60px;
+  --max-width: 1400px;
 }
 
 .event-container h1 span {
@@ -308,10 +317,15 @@ footer {
 
 /****************** EVENTPAGE NAV ******************/
 
-.event-header .nav-bar {
-  background-color: var(--primary-black);
+.event-header > div {
   position: fixed;
+  background-color: var(--primary-black);
   width: 100%;
+}
+
+.event-header .nav-bar {
+  max-width: var(--max-width);
+  margin: auto;
   padding: 0rem 1.25rem;
 }
 
@@ -440,6 +454,11 @@ footer {
   padding: 2rem 2rem;
 }
 
+.event-section-activities,
+.event-section-team {
+  max-width: var(--max-width);
+  margin: auto;
+}
 .event-section-info span,
 .event-section-about span {
   display: block;
@@ -675,11 +694,13 @@ button {
 /****************** EVENTPAGE footer ******************/
 
 .event-footer {
-  padding: 0rem 2rem 2rem 2rem;
+  padding: 4rem 2rem;
   background-color: var(--primary-black);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
+  max-width: var(--max-width);
+  margin: auto;
 }
 
 .event-footer div:last-child {
@@ -738,6 +759,12 @@ button {
 
 .event-footer div:nth-of-type(2) ul {
   margin: 0;
+  width: 25%;
+
+  hr {
+    border-width: 0.5px;
+    margin-bottom: 1rem;
+  }
 }
 
 .event-footer div:nth-of-type(2) a {
@@ -803,7 +830,9 @@ button {
 }
 
 .decorative-s-line > img {
-  width: 200%;
+  width: 100%;
+  background-repeat: repeat-x;
+  margin-bottom: -15%;
 }
 
 img.decorative-s-green,
@@ -989,8 +1018,13 @@ img.decorative-s-blue {
   }
 
   .event-section-team {
+    /* grid-column: span 7; */
+    /* grid-template-columns: subgrid; */
+    display: grid;
+    width: 100%;
     grid-column: span 7;
-    grid-template-columns: subgrid;
+    align-self: center;
+    margin-bottom: 2rem;
   }
 
   .event-section-team > div:first-of-type {
@@ -1016,6 +1050,9 @@ img.decorative-s-blue {
 
   .event-content img:nth-of-type(3) {
     grid-column: span 7;
+    height: 500px;
+    object-fit: cover;
+    background-position: center top;
   }
 
   img.decorative-s-green,
