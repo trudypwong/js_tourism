@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+/* todo: need to clean up the styles - remove unused ones */
+
 /* Box Sizing Reset */
 *,
 *:before,
@@ -346,6 +348,7 @@ footer {
   margin-left: 0px;
 }
 
+dl,
 .event-header p,
 .event-header a {
   font-family: 'Barlow', sans-serif;
@@ -459,12 +462,14 @@ footer {
   max-width: var(--max-width);
   margin: auto;
 }
+
 .event-section-info span,
 .event-section-about span {
   display: block;
   padding-bottom: 1rem;
 }
 
+.event-container .help-qa h2,
 .event-section-info h2,
 .event-section-about h2,
 .event-section-activities h2,
@@ -660,6 +665,7 @@ button {
   z-index: 1;
 }
 
+.help-content,
 .event-content {
   z-index: 0;
   margin-top: var(--banner-desktop-height);
@@ -1048,6 +1054,7 @@ img.decorative-s-blue {
     align-self: center;
   }
 
+  .help-content img:nth-of-type(3),
   .event-content img:nth-of-type(3) {
     grid-column: span 7;
     height: 500px;
@@ -1073,5 +1080,38 @@ img.decorative-s-blue {
     max-width: 400px;
     right: -15%;
     z-index: 15;
+  }
+}
+
+.help-qa {
+  /* background-color: var(--primary-medium-blue); */
+  padding: 2rem;
+  color: white;
+  height: fit-content;
+  max-width: var(--max-width);
+  margin: auto;
+
+  h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    /* see above */
+    color: white !important;
+    text-transform: uppercase;
+    margin: 4rem 0;
+  }
+}
+
+dl {
+  font-size: 1.3rem;
+
+  dt {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-neon-green);
+  }
+
+  dd {
+    margin-bottom: 2rem;
+    text-transform: none;
+    font-weight: 300;
   }
 }
