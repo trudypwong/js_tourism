@@ -664,6 +664,7 @@ button {
   z-index: 1;
 }
 
+.detail-content,
 .help-content,
 .event-content {
   z-index: 0;
@@ -1002,25 +1003,25 @@ img.decorative-s-blue {
     margin: auto;
   }
 
-  .event-section-activities article {
+  .event-section-activities > a {
     display: grid;
     grid-column: span 2;
     grid-template-columns: subgrid;
   }
 
-  .event-section-activities article > div {
+  .event-section-activities a > div {
     grid-column: 1/3;
     grid-row: 1/2;
     z-index: 0;
   }
 
-  .event-section-activities article > img {
+  .event-section-activities a > img {
     grid-column: 2;
     grid-row: 1/4;
     z-index: 1;
   }
 
-  .event-section-activities article .tag {
+  .event-section-activities a .tag {
     grid-column: 1/2;
     grid-row: 2/3;
     justify-self: start;
