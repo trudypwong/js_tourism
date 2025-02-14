@@ -29,8 +29,8 @@
   </head>
   <body>
     <header class="event-header">
-      <div>
-        <div class="nav-bar">
+      <nav class="nav-bar">
+        <div class="nav-container">
           <a href="/">
             <img
               class="logo"
@@ -38,18 +38,18 @@
               alt="A madeup logo for the Whistler Ski + Snowboard Festival"
             />
           </a>
-          <a href="#menu" class="menu-btn" id="menu-btn">&#9776;</a>
-          <!-- <nav id = "menu"> -->
-          <nav>
-            <ul>
-              <li><a href="#anchor-start">Home</a></li>
-              <li><a href="#anchor-about">About</a></li>
-              <li><a href="#anchor-activities">Activities</a></li>
-              <li><a href="#anchor-team">Team</a></li>
-            </ul>
-          </nav>
+          <a href="#menu" class="menu-btn" id="menu-btn">
+            <img src="images/menu.svg" alt="menu icon" />
+          </a>
+
+          <ul>
+            <li><a href="#anchor-start">Home</a></li>
+            <li><a href="#anchor-about">About</a></li>
+            <li><a href="#anchor-activities">Activities</a></li>
+            <li><a href="#anchor-team">Team</a></li>
+          </ul>
         </div>
-      </div>
+      </nav>
       <!--End nav bar-->
     </header>
 
@@ -92,7 +92,7 @@
       <!-- Page content -->
       <div class="event-content">
         <!-- Section 1 -->
-        <div class="event-section-info">
+        <section class="event-section-info">
           <!-- Content -->
           <section class="event-section-info-content">
             <a class="anchor" id="anchor-about"></a>
@@ -123,10 +123,10 @@
 
           <!-- BG text -->
           <p class="info-bg-text unselectable">Snowboarding Skiing</p>
-        </div>
+        </section>
 
         <!-- Section 2 -->
-        <div class="event-section-about">
+        <section class="event-section-about">
           <!-- Content -->
           <section class="event-section-about-content">
             <h2>
@@ -143,7 +143,7 @@
 
           <!-- BG text -->
           <p class="info-bg-text unselectable">adventurous spirits</p>
-        </div>
+        </section>
 
         <!-- Section 3 - Activities -->
         <section class="event-section-activities">
@@ -209,7 +209,9 @@
           </div>
           <!-- end of all activities -->
           <!-- BG text -->
-          <p class="info-bg-text unselectable">Snow Activities</p>
+          <p class="info-bg-text unselectable">
+            Snow Activities Snow Activities
+          </p>
         </section>
         <!-- end of activity section -->
 
@@ -258,7 +260,7 @@
         </section>
 
         <!-- Final photo -->
-        <div class="event-section-banner">
+        <section class="event-section-banner">
           <!-- final photo -->
           <img
             src="images/index/banner.jpg"
@@ -267,13 +269,9 @@
 
           <!-- decorative element -->
           <div class="decorative-s-line">
-            <img
-              src="images/index/s-line.png"
-              alt=""
-              style="overflow: clip !important"
-            />
+            <img src="images/index/s-line.png" alt="" />
           </div>
-        </div>
+        </section>
       </div>
       <!-- End of page content -->
     </main>
@@ -331,7 +329,7 @@
       </div>
       <!-- Copyright -->
       <div class="footer-copyright">
-        <p>&copy; 2024 - Trudy</p>
+        <p>&copy; 2025 - Trudy</p>
         <p><small>Extracted and modified from class assignment</small></p>
       </div>
     </footer>
