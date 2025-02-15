@@ -141,7 +141,9 @@ nav {
   ul {
     grid-area: nav;
     text-align: center;
-    display: none;
+    /* display: none; */
+    max-height: 0;
+    transition: all 1s ease-out;
 
     /* list */
     list-style: none;
@@ -155,6 +157,7 @@ nav {
       font-size: 1.5rem;
       display: block;
       transition: all 0.5s ease;
+      opacity: 0;
     }
 
     a:hover,
@@ -184,12 +187,18 @@ nav {
   }
 }
 
-.show nav ul {
-  display: block;
+.show ul {
+  max-height: 100vh;
+  transition: all 1s ease-in;
+  a {
+    opacity: 1;
+    transition-delay: 0.5s;
+  }
 }
 
 .show .menu-btn img {
   filter: opacity(0.5);
+  transition: all 0.5s ease;
 }
 
 /*
@@ -896,11 +905,37 @@ button {
 */
 
 @media (min-width: 768px) {
-  nav .nav-container {
-    padding: 0;
-  }
   nav {
     padding: 0 var(--desktop-edge-space);
+
+    .nav-container {
+      padding: 0;
+      grid-template-columns: repeat(4, 1fr);
+      /* grid-template-areas: 'logo nav'; */
+    }
+    a:has(.logo) {
+      /* background-color: red; */
+      grid-column: 1/2;
+      grid-row: 1;
+    }
+    ul {
+      grid-column: span 3;
+      grid-row: 1;
+      gap: 1rem;
+      width: 100%;
+      justify-content: end;
+    }
+  }
+  .menu-btn {
+    display: none;
+  }
+
+  .show nav ul {
+    grid-column: span 3;
+    grid-row: 1;
+    gap: 1rem;
+    width: 100%;
+    justify-content: end;
   }
 }
 

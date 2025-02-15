@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Function to handle navbar toggle
   function setupNavbarToggle() {
-    const body = document.body;
+    const nav = document.querySelector('nav');
     const btn = document.getElementById('menu-btn');
     if (btn) {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        body.classList.toggle('show');
+        nav.classList.toggle('show');
       });
 
       btn.addEventListener('mousedown', (e) => {
