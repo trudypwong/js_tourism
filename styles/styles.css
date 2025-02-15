@@ -125,61 +125,47 @@ nav {
   .nav-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      'logo button'
-      'nav  nav';
     max-width: var(--max-width);
-    padding: 0rem calc(var(--mobile-edge-space) * 2) 0 var(--mobile-edge-space);
+    padding: 0rem var(--mobile-edge-space);
     margin: auto;
   }
 
-  a {
-    /* Remove highlight as pressed */
-    -webkit-tap-highlight-color: transparent !important;
-  }
-
   ul {
-    grid-area: nav;
+    grid-column: span 2;
+    grid-row: 2;
     text-align: center;
-    /* display: none; */
-    max-height: 0;
-    transition: all 1s ease-out;
-
-    /* list */
     list-style: none;
     margin: 0;
     padding: 0;
+  }
 
-    a {
-      text-decoration: none;
-      color: #d3d3d3;
-      line-height: 1.5;
-      font-size: 1.5rem;
-      display: block;
-      transition: all 0.5s ease;
-      opacity: 0;
-    }
+  a {
+    text-decoration: none;
+    color: var(--primary-white);
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
 
-    a:hover,
-    a:active,
-    a:focus {
-      /* background-color: rgb(136, 136, 136); */
-      color: var(--primary-neon-green);
-    }
+  a:hover,
+  a:active,
+  a:focus {
+    /* background-color: rgb(136, 136, 136); */
+    color: var(--primary-neon-green);
+  }
 
-    li {
-      margin-top: 20px;
-    }
+  li {
+    margin-top: 20px;
+  }
 
-    li:last-child {
-      margin-bottom: 2rem;
-    }
+  li:last-child {
+    margin-bottom: 2rem;
   }
 
   .menu-btn {
-    grid-area: button;
+    grid-column: 2/3;
+    grid-row: 1;
     justify-self: end;
-    color: white;
+    /* color: white; */
     background-color: transparent;
     width: 60px;
     height: 100%;
@@ -187,18 +173,55 @@ nav {
   }
 }
 
-.show ul {
-  max-height: 100vh;
-  transition: all 1s ease-in;
-  a {
+/* General */
+
+a:has(.logo) {
+  grid-column: 1/2;
+  grid-row: 1;
+}
+
+a {
+  /* Remove highlight as pressed */
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Animation */
+/* hamburger menu */
+
+nav:not(.show) {
+  ul {
+    max-height: 0;
+    transition: max-height 1s ease-out;
+  }
+
+  a:not(:has(.logo, img)) {
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+  }
+
+  .menu-btn img {
     opacity: 1;
-    transition-delay: 0.5s;
+    transition: opacity 0.5s ease;
   }
 }
 
-.show .menu-btn img {
-  filter: opacity(0.5);
-  transition: all 0.5s ease;
+/* dropdown menu */
+.show {
+  ul {
+    max-height: 100vh;
+    transition: max-height 1s ease-in;
+  }
+
+  a:not(:has(.logo, img)) {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    transition-delay: 0.5s;
+  }
+
+  .menu-btn img {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
 }
 
 /*
@@ -907,35 +930,36 @@ button {
 @media (min-width: 768px) {
   nav {
     padding: 0 var(--desktop-edge-space);
-
     .nav-container {
       padding: 0;
-      grid-template-columns: repeat(4, 1fr);
-      /* grid-template-areas: 'logo nav'; */
+      grid-template-columns: repeat(2, 1fr);
     }
-    a:has(.logo) {
-      /* background-color: red; */
-      grid-column: 1/2;
-      grid-row: 1;
-    }
-    ul {
-      grid-column: span 3;
-      grid-row: 1;
-      gap: 1rem;
-      width: 100%;
-      justify-content: end;
-    }
-  }
-  .menu-btn {
-    display: none;
   }
 
-  .show nav ul {
-    grid-column: span 3;
-    grid-row: 1;
+  ul {
+    display: flex;
+    flex-direction: row;
+    grid-column: 2/3;
+    grid-row-start: 1 !important;
     gap: 1rem;
     width: 100%;
     justify-content: end;
+  }
+
+  a:not:has(.logo) {
+    transition: all 0.5s ease;
+    opacity: 1;
+  }
+
+  nav:not(.show) {
+    a:not(:has(.logo, img)) {
+      transition: opacity 0.5s ease-out;
+      opacity: 1;
+    }
+  }
+
+  .menu-btn {
+    display: none;
   }
 }
 
