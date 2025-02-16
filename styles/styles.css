@@ -928,6 +928,10 @@ button {
 */
 
 @media (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
+
   nav {
     padding: 0 var(--desktop-edge-space);
     .nav-container {
