@@ -8,8 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // Extract the values
         const name = e.target.querySelector('.activity-name h3')?.textContent;
         const tag = e.target.querySelector('.activity-name .tag')?.textContent;
+        const image = e.target.querySelector('img')?.getAttribute('src');
+
         console.log(name);
         console.log(tag);
+        console.log(image);
+        // Update the values
+        const nameDOM = document.querySelector('.a-detail-name');
+        const tagDOM = document.querySelector('.a-detail-tag');
+        const imageDOM = document.querySelector('.a-detail-image');
+        nameDOM.textContent = name;
+        tagDOM.textContent = tag;
+        imageDOM.setAttribute('src', image);
+
         // Show the popup
         const detailContainer = document.querySelector('.detail-content');
         detailContainer.classList.remove('hidden');
