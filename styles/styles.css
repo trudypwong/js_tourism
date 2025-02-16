@@ -168,11 +168,18 @@ nav {
     font-size: 1.5rem;
   }
 
-  a:hover,
   a:active,
   a:focus {
     /* background-color: rgb(136, 136, 136); */
     color: var(--primary-neon-green);
+  }
+
+  a:hover {
+    border-bottom: 3px solid var(--primary-neon-green);
+  }
+
+  a:has(img):hover {
+    border-bottom: none;
   }
 
   li {
@@ -643,8 +650,8 @@ footer.event-footer {
   }
 
   .custom-button:hover {
-    border: 3px solid var(--primary-neon-blue);
-    color: var(--primary-neon-blue);
+    /* border: 3px solid var(--primary-neon-blue);
+    color: var(--primary-neon-blue); */
   }
 
   .team-list {
@@ -739,7 +746,7 @@ footer.event-footer {
 img,
 section {
   margin: 0;
-  border: none;
+  /* border: none; */
 }
 
 /*
@@ -772,9 +779,9 @@ button {
 
 .custom-button:hover {
   text-decoration: underline;
-  border: 3px solid var(--primary-neon-green);
-  color: var(--primary-neon-green);
-  background-color: transparent;
+  /* border: 3px solid var(--primary-neon-green);
+  color: var(--primary-neon-green); */
+  /* background-color: transparent; */
   transition: all 0.15s ease;
 }
 
@@ -918,6 +925,7 @@ button {
     border-bottom: 3px solid none;
     padding-bottom: 0.25rem;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
+    pointer-events: visible;
   }
   img:hover {
     border-bottom: 3px solid var(--primary-neon-green);
@@ -1296,7 +1304,8 @@ button {
   }
 
   .custom-button {
-    margin-top: 2rem;
+    margin: 0;
+    margin-top: 0.5rem;
     background-color: var(--primary-neon-green);
     color: var(--primary-black);
     width: fit-content;

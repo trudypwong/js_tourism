@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Function to load initial activity list from json
+  function loadActivityList() {}
+
   // Function to handle clicking an activity card
   function setupShowActivityDetail() {
     const activities = document.querySelectorAll('.activity-card');
@@ -82,4 +85,5 @@ document.addEventListener('DOMContentLoaded', function () {
   setupNavbarToggle();
   setupEventPageNavigation();
   setupShowActivityDetail();
+  loadActivityList();
 });
