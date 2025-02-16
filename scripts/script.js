@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
       eventMenuBtn.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          document.body.classList.toggle('show');
+          const nav = document.querySelector('nav');
+          nav.classList.toggle('show');
           const href = e.target.getAttribute('href');
           const section = document.getElementById(href.substring(1));
           const padding = 8;

@@ -191,31 +191,33 @@ a {
 nav:not(.show) {
   ul {
     max-height: 0;
-    transition: max-height 1s ease-out;
+    transition: max-height 0.5s ease;
   }
 
   a:not(:has(.logo, img)) {
-    transition: opacity 0.5s ease-out;
+    transition: opacity 0.25s ease-out;
     opacity: 0;
   }
 
   .menu-btn img {
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.25s ease;
   }
 }
 
 /* dropdown menu */
+/* note the specificity */
 .show {
+  /* nav:has(.show) { */
   ul {
     max-height: 100vh;
-    transition: max-height 1s ease-in;
+    transition: max-height 0.5s ease-in;
   }
 
   a:not(:has(.logo, img)) {
     opacity: 1;
-    transition: opacity 1s ease-in;
-    transition-delay: 0.5s;
+    transition: opacity 0.5s ease-in;
+    transition-delay: 0.25s;
   }
 
   .menu-btn img {
@@ -415,7 +417,6 @@ footer.event-footer {
     border: none;
     padding: var(--mobile-edge-space);
     margin: 0;
-
     h2,
     p {
       grid-column: span 3;
@@ -427,10 +428,10 @@ footer.event-footer {
 
     p {
       font-family: 'Barlow', sans-serif;
-      font-weight: 400;
+      font-weight: 300;
       font-style: normal;
       font-size: 1rem;
-      line-height: 1.4rem;
+      line-height: 180%;
     }
 
     h2 span:nth-of-type(2) {
@@ -497,7 +498,12 @@ footer.event-footer {
   .activity-card {
     box-sizing: content-box;
     text-decoration: none;
-    border-bottom: 0.5rem solid rgba(255, 255, 255, 0);
+    /* border-bottom: 0.5rem solid rgba(255, 255, 255, 0); */
+    .activity-name {
+      border-top: 0.5rem solid rgba(255, 255, 255, 0);
+      /* border-bottom: 0.5rem solid rgba(255, 255, 255, 0); */
+      /* transition: all 0.15s ease; */
+    }
     img {
       opacity: 1;
     }
@@ -505,8 +511,13 @@ footer.event-footer {
 
   .activity-card:hover {
     /* border-left: 0.5rem solid rgba(255, 255, 255, 0.5); */
-    border-bottom: 0.5rem solid rgba(255, 255, 255, 1);
-    transition: all 0.5s ease;
+    /* border-bottom: 0.5rem solid var(--primary-neon-green); */
+
+    .activity-name {
+      border-top: 0.5rem solid var(--primary-neon-green);
+      /* border-bottom: 0.5rem solid var(--primary-neon-green); */
+      transition: all 0.5s ease;
+    }
     img {
       opacity: 1;
     }
@@ -928,26 +939,21 @@ button {
 */
 
 @media (min-width: 768px) {
-  .menu-btn {
-    display: none;
-  }
-
   nav {
     padding: 0 var(--desktop-edge-space);
     .nav-container {
       padding: 0;
       grid-template-columns: repeat(2, 1fr);
     }
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    grid-column: 2/3;
-    grid-row-start: 1 !important;
-    gap: 1rem;
-    width: 100%;
-    justify-content: end;
+    ul {
+      display: flex;
+      flex-direction: row;
+      grid-column: 2/3;
+      grid-row-start: 1 !important;
+      gap: 1rem;
+      width: 100%;
+      justify-content: end;
+    }
   }
 
   a:not:has(.logo) {
