@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Function to handle clicking an activity card
+  function setupShowActivityDetail() {
+    const activities = document.querySelectorAll('.activity-card');
+    activities.forEach((activity) => {
+      activity.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Extract the values
+        const name = e.target.querySelector('.activity-name h3')?.textContent;
+        const tag = e.target.querySelector('.activity-name .tag')?.textContent;
+        console.log(name);
+        console.log(tag);
+        // Show the popup
+        const detailContainer = document.querySelector('.detail-content');
+        detailContainer.classList.remove('hidden');
+        detailContainer.addEventListener('click', (e) => {
+          e.preventDefault();
+          console.log('inside');
+        });
+        // Close popup
+        const closePopup = document.querySelector('.detail-close');
+        closePopup.addEventListener('click', (e) => {
+          e.preventDefault();
+          detailContainer.classList.add('hidden');
+        });
+        console.log(detailContainer);
+      });
+    });
+  }
+
   // Function to handle navbar toggle
   function setupNavbarToggle() {
     const nav = document.querySelector('nav');
@@ -15,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Function for anchor links
   function setupEventPageNavigation() {
     const eventPage = document.getElementsByClassName('event-header');
     if (eventPage && eventPage.length > 0) {
@@ -40,4 +70,5 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initial setup based on page content
   setupNavbarToggle();
   setupEventPageNavigation();
+  setupShowActivityDetail();
 });
