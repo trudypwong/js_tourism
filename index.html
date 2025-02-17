@@ -121,8 +121,9 @@
             alt="Group of skiiers standing and waiting on their skiis in the snow"
           />
 
-          <!-- BG text -->
+          <!-- decorative element -->
           <p class="info-bg-text unselectable">Snowboarding Skiing</p>
+          <!-- End of decorative element -->
         </section>
 
         <!-- Section 2 -->
@@ -141,8 +142,9 @@
             alt="Group of skiiers standing and waiting on their skiis in the snow"
           />
 
-          <!-- BG text -->
+          <!-- decorative element -->
           <p class="info-bg-text unselectable">adventurous spirits</p>
+          <!-- End of decorative element -->
         </section>
 
         <!-- Section 3 - Activities -->
@@ -154,66 +156,21 @@
           </div>
 
           <div class="activity-list">
-            <a class="activity-card" href="#">
-              <article>
-                <img
-                  src="./images/index/skiier.jpg"
-                  alt="Skiier speeding by with a bloom of snow trailing behind"
-                />
-                <div class="activity-name">
-                  <h3>Ski Race Extreme</h3>
-                  <div class="tag">Skiing</div>
-                </div>
-              </article>
-            </a>
-            <!-- end of one activity  -->
-            <a class="activity-card" href="#">
-              <article>
-                <img
-                  src="./images/index/snowboarder.jpg"
-                  alt="Snowboarder in flight as he is moving down a snowy slope"
-                />
-                <div class="activity-name">
-                  <h3>Snowboard Blitz Battle</h3>
-                  <div class="tag">Snowboarding</div>
-                </div>
-              </article>
-            </a>
-            <!-- end of one activity  -->
-            <a class="activity-card" href="#">
-              <article>
-                <img
-                  src="./images/index/musicstage.jpg"
-                  alt="Crowds looking at a performance on stage"
-                />
-                <div class="activity-name">
-                  <h3>Music Concert Series</h3>
-                  <div class="tag">Entertainment</div>
-                </div>
-              </article>
-            </a>
-            <!-- end of one activity  -->
-            <a class="activity-card" href="#">
-              <article>
-                <img
-                  src="./images/index/theatre.jpg"
-                  alt="Red empty chairs facing a theatre that is playing a movie"
-                />
-                <div class="activity-name">
-                  <h3>72-hr Film Frenzy</h3>
-                  <div class="tag">Entertainment</div>
-                </div>
-              </article>
-            </a>
-            <!-- end of one activity  -->
+            <!-- 
+            ======================================================
+            This will be dynamically added! 
+            Using json to extra information and load content
+            ======================================================
+            -->
           </div>
-          <!-- end of all activities -->
-          <!-- BG text -->
+
+          <!-- decorative element -->
           <p class="info-bg-text unselectable">
             Snow Activities Snow Activities
           </p>
+          <!-- End of decorative element -->
         </section>
-        <!-- end of activity section -->
+        <!-- end of Section 3: Activity section -->
 
         <!-- Section 4 - Team -->
         <section class="event-section-team">
@@ -266,8 +223,10 @@
 
           <!-- Credits -->
           <div class="credits">
-            <p>Event details created from ChatGPT</p>
+            <p>Event descriptions from ChatGPT</p>
             <p>Illustrations from Freepik</p>
+            <p>Icons from Heroicons</p>
+            <p>Landing page coded + designed by Trudy</p>
           </div>
         </section>
 
@@ -289,39 +248,28 @@
     </main>
     <!-- End of page content + main header -->
 
-    <!-- Section - Popup -->
+    <!-- Section - Popup Template-->
     <div class="detail-content hidden">
       <section class="detail-item">
         <div>
-          <img
-            class="a-detail-image"
-            src="./images/index/skiier.jpg"
-            alt="Skiier speeding by with a
-bloom of snow trailing behind"
-            width="50%"
-          />
+          <img class="a-detail-image" src="" alt="" width="50%" />
           <a href="#close" class="detail-close">
             <img src="images/close.svg" alt="menu icon" />
           </a>
         </div>
         <div class="event-detail-header">
-          <h3 class="a-detail-name">Ski Race Extreme</h3>
-          <div class="tag a-detail-tag">Skiing</div>
+          <h3 class="a-detail-name"></h3>
+          <div class="tag a-detail-tag"></div>
         </div>
         <div class="event-detail-dates">
-          <p>Saturday, April 12th, 2055</p>
-          <p>Race Starts at 11:00 AM</p>
+          <p class="a-detail-date"></p>
+          <p>Race Starts at <span class="a-detail-time"></span></p>
         </div>
-        <p>
-          Join us for an adrenaline-packed day as top athletes race down the
-          challenging slopes of Whistler Blackcomb in this high-stakes,
-          fast-paced competition! Whether you’re cheering from the sidelines or
-          racing for the finish line, the Ski Race Extravaganza promises
-          heart-stopping moments and intense action.
-        </p>
+        <p class="a-detail-desc"></p>
         <a class="custom-button" href="#">Register</a>
       </section>
     </div>
+    <!-- End of Popup template -->
 
     <!-- Footer -->
     <footer class="event-footer">
@@ -361,9 +309,11 @@ bloom of snow trailing behind"
       <!-- Links -->
       <div class="footer-links">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#team">Team</a></li>
+          <!-- todo: link to same actions from nav -->
+          <li><a href="#anchor-start">Home</a></li>
+          <li><a href="#anchor-about">About</a></li>
+          <li><a href="#anchor-activities">Activities</a></li>
+          <li><a href="#anchor-team">Team</a></li>
         </ul>
       </div>
       <!-- End of links -->
