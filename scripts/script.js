@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
         timeDOM.textContent = time;
 
         // Show the popup
-        const detailContainer = document.querySelector('.detail-content');
-        detailContainer.classList.remove('hidden');
-        detailContainer.addEventListener('click', (e) => {
+        const dialogDetail = document.querySelector('.detail-content');
+        dialogDetail.showModal();
+        dialogDetail.addEventListener('click', (e) => {
           e.preventDefault();
           console.log('inside');
         });
@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const closePopup = document.querySelector('.detail-close');
         closePopup.addEventListener('click', (e) => {
           e.preventDefault();
-          detailContainer.classList.add('hidden');
+          dialogDetail.close();
         });
-        console.log(detailContainer);
+        console.log(dialogDetail);
       });
     });
   }

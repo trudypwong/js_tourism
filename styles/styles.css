@@ -9,7 +9,7 @@
 
 :root {
   --all-black: #000000;
-  --primary-black: #222222;
+  --primary-black: #000000;
   --primary-neon-green: #c7fe46;
   --primary-neon-green-dark: rgb(118, 163, 14);
   --primary-neon-blue: #3edfd4;
@@ -671,7 +671,8 @@ footer.event-footer {
     text-align: center;
 
     img {
-      width: 50%;
+      min-width: 50%;
+
       margin-bottom: 1rem;
     }
     h3 {
@@ -1009,13 +1010,13 @@ button {
 @media (min-width: 1024px) {
   h1 {
     .title-whistler {
-      padding-left: 0;
+      padding-left: calc(var(--desktop-edge-space) - 4px);
       font-size: 4.5rem;
       line-height: 3.5rem;
     }
 
     .title-black-box {
-      padding-left: 0;
+      padding-left: var(--desktop-edge-space);
       span {
         font-size: 6rem;
         line-height: 5rem;
@@ -1265,31 +1266,65 @@ button {
   ========================================================================================
 */
 
+/* width */
+.detail-item::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.detail-item::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.detail-item::-webkit-scrollbar-thumb {
+  background: var(--primary-neon-green);
+}
+
+/* Handle on hover */
+.detail-item::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-neon-blue);
+}
+
+.detail-item {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
 .detail-content {
-  position: fixed;
-  top: 2rem;
-  z-index: 100;
   background-color: var(--all-black);
   width: calc(100vw - 9rem);
-  left: 4rem;
+  /* below is not needed after using <dialog> */
+  /* position: fixed; */
+  /* z-index: 100; */
+  /* top: 2rem; */
+  /* left: 4rem; */
+  /* filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8)); */
+  border-radius: 0.2rem;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 50px rgba(0, 255, 255, 0.8),
+    inset 10px 10px 15px rgba(0, 255, 255, 0.8),
+    inset -10px -10px 15px rgba(0, 255, 255, 0.8);
+  border: 1px solid var(--primary-neon-blue);
+  max-height: 100vh;
+  overflow: hidden;
 
-  div:nth-of-type(1) {
+  .detail-close-container {
     display: flex;
-    justify-content: space-between;
-    a {
-      text-transform: uppercase;
-      position: absolute;
-      z-index: 100;
-      right: 0;
-      top: 0;
-      margin: 0.5rem;
+    justify-content: end;
+    align-items: end;
+    .detail-close {
       img {
-        height: 42px;
-        width: 42px;
+        height: 2rem;
+        width: 2rem;
       }
     }
-    a:hover {
+    .detail-close:active,
+    .detail-close:focus,
+    .detail-close:hover {
       border-bottom: 3px solid var(--primary-neon-green);
+    }
+    .detail-close:focus-visible {
+      outline-color: transparent;
     }
   }
   h3 {
@@ -1318,6 +1353,7 @@ button {
     max-width: var(--max-width);
     margin: auto;
     padding: 2rem;
+    padding-top: 0;
     p,
     h3 {
       color: white;
@@ -1339,4 +1375,8 @@ button {
       text-transform: uppercase;
     }
   }
+}
+
+.detail-content::backdrop {
+  background-color: var(--primary-medium-blue-light);
 }
