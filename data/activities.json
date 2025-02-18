@@ -13,7 +13,7 @@
     "tag": "Snowboarding",
     "date": "Sunday, April 13th, 2055",
     "time": "11:00 AM",
-    "description": "Some snowboard description",
+    "description": "Get ready for the ultimate snowboarding showdown! The Snowboard Blitz Battle is where the best riders go head-to-head, unleashing epic tricks and insane freestyle moves. Watch the action unfold as athletes battle for glory on the slopes—this is where champions are made, and it’s a must-see for anyone who lives for the thrill of snowboarding!",
     "img": "./images/index/snowboarder.jpg",
     "alt": "Snowboarder in flight as he is moving down a snowy slope"
   },
@@ -22,7 +22,7 @@
     "tag": "Entertainment",
     "date": "Saturday, April 12th, 2055",
     "time": "6:00 PM",
-    "description": "Some music concert description",
+    "description": "Feel the beat at the Music Concert Series! With electrifying performances from top bands and DJs, this series brings the perfect soundtrack to your festival experience. Whether you’re catching some live music after a day on the mountain or dancing under the stars, the energy is contagious and the vibes are unmissable!",
     "img": "./images/index/musicstage.jpg",
     "alt": "Crowds looking at a performance on stage"
   },
@@ -31,7 +31,7 @@
     "tag": "Entertainment",
     "date": "Sunday, April 13th, 2055",
     "time": "6:00 PM",
-    "description": "Some film description",
+    "description": "Lights, camera, action! The 72-Hour Film Frenzy is an intense, high-speed film competition where filmmakers race against the clock to create jaw-dropping snowboarding and skiing films. With just 72 hours to capture the action, the results are pure adrenaline. Don’t miss the final screening, where these rapid-fire creations come to life in an epic cinematic showcase!",
     "img": "./images/index/theatre.jpg",
     "alt": "Red empty chairs facing a theatre that is playing a movie"
   }
