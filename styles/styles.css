@@ -810,7 +810,7 @@ button {
   background-color: var(--primary-black);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: calc(var(--mobile-edge-space) * 2);
+  row-gap: calc(var(--mobile-edge-space) * 1);
   max-width: var(--max-width);
   margin: auto;
 
