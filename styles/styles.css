@@ -94,6 +94,15 @@ h1 {
 h2 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
+  /* font-size: 3rem; */
+  font-size: 5rem;
+  line-height: 3rem;
+  grid-row: 1;
+}
+
+h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
   font-size: 3rem;
   line-height: 3rem;
   grid-row: 1;
@@ -367,8 +376,9 @@ h1 {
     position: absolute;
     height: var(--banner-desktop-height);
     width: 100%;
-    background-position: center;
-    background-image: url('../images/index/skiiers2.jpg');
+    background-image: url('../images/index/homebanner.jpg');
+    background-position: 40% 70%;
+    transform: scaleX(-1);
     background-size: cover;
     z-index: 1;
   }
@@ -446,6 +456,7 @@ footer.event-footer {
     margin: 0;
     h2,
     p {
+      padding-top: 1rem;
       grid-column: span 3;
     }
 
@@ -525,6 +536,7 @@ footer.event-footer {
   .activity-card {
     box-sizing: content-box;
     text-decoration: none;
+    cursor: pointer;
     /* border-bottom: 0.5rem solid rgba(255, 255, 255, 0); */
     .activity-name {
       border-top: 0.5rem solid rgba(255, 255, 255, 0);
@@ -1061,6 +1073,8 @@ button {
       order: 3;
       transform: translateX(-50%);
       overflow: visible;
+      transform: translateY(-50%);
+      margin-bottom: -4rem;
     }
   }
 
@@ -1093,6 +1107,8 @@ button {
       order: 3;
       transform: translateX(-50%);
       overflow: visible;
+      transform: translateY(-50%);
+      margin-bottom: -4rem;
     }
   }
   /* ============= Activities Section ============= */
